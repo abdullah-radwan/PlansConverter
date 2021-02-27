@@ -1,0 +1,40 @@
+<Updates>
+ <ApplicationName>{AnyApplication}</ApplicationName>
+ <ApplicationVersion>1.0.0</ApplicationVersion>
+ <Checksum>true</Checksum>
+ <PackageUpdate>
+  <Name>plansconverter</Name>
+  <DisplayName>Plans Converter</DisplayName>
+  <Description>Install Plans Converter.</Description>
+  <Version>1.0</Version>
+  <ReleaseDate>2021-02-27</ReleaseDate>
+  <Default>true</Default>
+  <ForcedInstallation>true</ForcedInstallation>
+  <Essential>true</Essential>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="181780" OS="Any" UncompressedSize="503442"/>
+  <DownloadableArchives>plansconverter.7z</DownloadableArchives>
+  <Licenses>
+   <License name="GPL v3" file="GPL v3.txt"/>
+   <License name="MIT" file="MIT.txt"/>
+  </Licenses>
+  <SHA1>a279a0d426b2345eeaf1c4dfbab7d512e3a00da0</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>qt5</Name>
+  <DisplayName>Qt 5 binaries</DisplayName>
+  <Description>Install Qt 5 binaries.</Description>
+  <Version>5.15.2</Version>
+  <ReleaseDate>2020-11-20</ReleaseDate>
+  <Default>true</Default>
+  <ForcedInstallation>true</ForcedInstallation>
+  <Essential>true</Essential>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="15330441" OS="Any" UncompressedSize="61141056"/>
+  <DownloadableArchives>qt5.7z</DownloadableArchives>
+  <Licenses>
+   <License name="LGPL v3" file="LGPL v3.txt"/>
+  </Licenses>
+  <SHA1>eb41ea79f687be34599256a9eabdf379f5c8b8a9</SHA1>
+ </PackageUpdate>
+</Updates>
