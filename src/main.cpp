@@ -23,9 +23,8 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    app.setApplicationName("PlansConverter");
-    app.setApplicationDisplayName("Plans Converter");
-    app.setApplicationVersion("1.0");
+    app.setApplicationName("Plans Converter");
+    app.setApplicationVersion("1.0.1");
 
     QString dirPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     QDir(dirPath).mkpath(".");
@@ -35,7 +34,7 @@ int main(int argc, char *argv[])
 
     qInstallMessageHandler(messageHandler);
 
-    qDebug() << "Plans Converter 1.0, 27 February 2021";
+    qDebug() << "Plans Converter 1.0.1, 4 March 2021";
     qDebug() << "Current date:" << QDateTime::currentDateTime().toString("yyyy-MM-dd");
 
     ConfigEditor configEditor(dirPath);

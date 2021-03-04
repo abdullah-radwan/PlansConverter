@@ -32,7 +32,7 @@ MainWindow::MainWindow(ConfigEditor::Config* config) : ui(new Ui::MainWindow), c
     }
     else ui->altitudeCheck->setChecked(false);
 
-    ui->deleteCheck->setChecked(config->deleteOutput);
+    ui->deleteCheck->setChecked(config->deleteInput);
 
     ui->routeEdit->setMinimumHeight(ui->routeEdit->fontMetrics().lineSpacing() +
                                    (ui->routeEdit->document()->documentMargin() + ui->routeEdit->frameWidth()) * 2 +
@@ -70,7 +70,13 @@ void MainWindow::setConverter()
 
 void MainWindow::setUpdater()
 {
-    updater = QtAutoUpdater::Updater::create("qtifw", {{"path", qApp->applicationDirPath() + "/maintenancetool"}}, qApp);
+    QDir appDir(qApp->applicationDirPath());
+
+#ifdef Q_OS_MACOS
+    appDir.cdUp(); appDir.cdUp(); appDir.cdUp();
+#endif
+
+    updater = QtAutoUpdater::Updater::create("qtifw", {{"path", appDir.absolutePath() + "/Plans Converter Maintenance Tool"}}, qApp);
 
     if (updater)
     {
@@ -95,6 +101,8 @@ void MainWindow::setUpdater()
                 break;
             }
         });
+
+        updateController = new QtAutoUpdater::UpdateController(updater, this);
     }
     else qDebug() << "Couldn't create the updater";
 }
@@ -296,7 +304,7 @@ void MainWindow::on_convertButton_clicked()
 
     converterOp->data.altitude = ui->altitudeCheck->isVisible() && ui->altitudeCheck->isChecked() ? ui->altitudeSpin->value() : 0;
 
-    converterOp->data.deleteOutput = ui->deleteCheck->isChecked();
+    converterOp->data.deleteInput = ui->deleteCheck->isChecked();
 
     converterOp->data.outputPath = path;
 
@@ -330,7 +338,7 @@ void MainWindow::on_checkAction_triggered()
 
     qDebug() << "Starting updater";
 
-    (new QtAutoUpdater::UpdateController(updater, this))->start(QtAutoUpdater::UpdateController::DisplayLevel::ExtendedInfo);
+    updateController->start(QtAutoUpdater::UpdateController::DisplayLevel::ExtendedInfo);
 }
 
 void MainWindow::on_aboutAction_triggered()
@@ -338,8 +346,8 @@ void MainWindow::on_aboutAction_triggered()
     QMessageBox::about(this, "Plans Converter", "Plans Converter\n"
                              "An app to convert between major flight plan formats.\n\n"
 
-                             "Version: 1.0\n"
-                             "Release date: 27 February 2021\n\n"
+                             "Version: 1.0.1\n"
+                             "Release date: 4 March 2021\n\n"
 
                              "Copyright © Abdullah Radwan");
 }
@@ -356,7 +364,7 @@ void MainWindow::closeEvent(QCloseEvent *bar)
 
     config->typeIFR = ui->ifrRadio->isChecked();
     config->altitude = ui->altitudeCheck->isChecked() && ui->altitudeSpin->isVisible() ? ui->altitudeSpin->value() : 0;
-    config->deleteOutput = ui->deleteCheck->isChecked();
+    config->deleteInput = ui->deleteCheck->isChecked();
 
     config->mainSize = size();
     config->mainPos = pos();

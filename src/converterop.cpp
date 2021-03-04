@@ -53,7 +53,7 @@ void ConverterOp::convert()
     case PLN:
         plnConverter.typeIFR = data.typeIFR;
         plnConverter.routeType = data.routeType;
-        plnConverter.cruizeAlt = data.altitude;
+        plnConverter.cruizeAlt = data.altitude ? data.altitude : 100;
 
         success = plnConverter.writeFile(data.outputPath);
         break;
@@ -71,7 +71,7 @@ void ConverterOp::convert()
         return;
     }
 
-    if (data.deleteOutput)
+    if (data.deleteInput)
     {
         if (QFile(data.inputPath).remove()) qDebug() << "The input file was deleted successfully";
         else qDebug() << "Couldn't delete the input file";

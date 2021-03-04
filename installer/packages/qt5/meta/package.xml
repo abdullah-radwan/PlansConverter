@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package>
-    <DisplayName>Qt 5 binaries</DisplayName>
-    <Description>Install Qt 5 binaries.</Description>
-    <Version>5.15.2</Version>
-    <ReleaseDate>2020-11-20</ReleaseDate>
-    <Licenses>
-        <License name="LGPL v3" file="LGPL v3.txt" />
-    </Licenses>
-    <Default>true</Default>
+	<DisplayName>Qt 5 binaries</DisplayName>
+	<Description>Install Qt 5 binaries.</Description>
+	<Version>5.15.2</Version>
+	<ReleaseDate>2020-11-20</ReleaseDate>
+	<Licenses>
+		<License name="LGPL v3" file="LGPL v3.txt" />
+	</Licenses>
+	<Default>true</Default>
 	<ForcedInstallation>true</ForcedInstallation>
-    <Essential>true</Essential>
+	<Essential>true</Essential>
 	<Script>installscript.qs</Script>
 </Package>

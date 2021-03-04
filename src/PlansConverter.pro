@@ -1,3 +1,5 @@
+TARGET = "Plans Converter"
+
 QT += core gui widgets autoupdaterwidgets
 
 CONFIG += c++17
@@ -29,11 +31,16 @@ INCLUDEPATH += ../lib/include
 
 LIBS += -L../lib -lpugixml
 
-VERSION = 1.0
+VERSION = 1.0.1
 
 win32
 {
     RC_ICONS = ../res/icon.ico
     QMAKE_TARGET_DESCRIPTION = Convert between major flight plan formats.
-    QMAKE_TARGET_COPYRIGHT = Copyright 2021, Abdullah Radwan
+    QMAKE_TARGET_COPYRIGHT = Copyright 2021 Abdullah Radwan
+}
+
+macx
+{
+    ICON = ../res/icon.icns
 }

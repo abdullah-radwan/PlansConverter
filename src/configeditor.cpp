@@ -11,7 +11,7 @@ void ConfigEditor::readConfig()
 
     config.typeIFR = settings.value("TypeIFR", true).toBool();
     config.altitude = settings.value("Altitude", 0).toInt();
-    config.deleteOutput = settings.value("DeleteOutput", true).toBool();
+    config.deleteInput = settings.value("DeleteInput", true).toBool();
     config.checkUpdates = settings.value("CheckDate", 0).toDate().addDays(14) <= QDate::currentDate();
 
     settings.beginGroup("InputData");
@@ -46,7 +46,7 @@ void ConfigEditor::writeConfig()
 
     settings.setValue("TypeIFR", config.typeIFR);
     settings.setValue("Altitude", config.altitude);
-    settings.setValue("DeleteOutput", config.deleteOutput);
+    settings.setValue("DeleteInput", config.deleteInput);
     if (config.checkUpdates || !settings.value("CheckDate", 0).toDate().isValid()) settings.setValue("CheckDate", QDate::currentDate());
 
     settings.beginGroup("InputData");

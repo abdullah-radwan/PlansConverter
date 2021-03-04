@@ -50,6 +50,7 @@ private:
     Ui::MainWindow* ui;
     ConfigEditor::Config* config;
     QtAutoUpdater::Updater* updater;
+    QtAutoUpdater::UpdateController* updateController;
 
     QString inputFormat;
     QString* inputFolder;

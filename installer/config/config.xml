@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Installer>
-    <Name>Plans Converter</Name>
-    <Version>1.0</Version>
-    <Title>Plans Converter Installer</Title>
-    <Publisher>Abdullah Radwan</Publisher>
-    <InstallerApplicationIcon>../../res/icon</InstallerApplicationIcon>
-	<InstallerWindowIcon>../../res/icon</InstallerWindowIcon>
-    <StartMenuDir>Plans Converter</StartMenuDir>
-    <TargetDir>@ApplicationsDirX86@/Plans Converter</TargetDir>
-	<RemoteRepositories>
-     <Repository>
-		<Url>https://raw.githubusercontent.com/abdullah-radwan/PlansConverter/master/installer/repository/win</Url>
-        <Enabled>1</Enabled>
-        <DisplayName>Main Repository</DisplayName>
-     </Repository>
+	<Name>Plans Converter</Name>
+	<Version>1.0.1</Version>
+	<Title>Plans Converter Installer</Title>
+	<Publisher>Abdullah Radwan</Publisher>
+	<InstallerApplicationIcon>../../res/icon</InstallerApplicationIcon>
+	<StartMenuDir>Plans Converter</StartMenuDir>
+	<MaintenanceToolName>Plans Converter Maintenance Tool</MaintenanceToolName>
+	<TargetDir>@ApplicationsDirX86@/Plans Converter</TargetDir>
+	<RemoteRepositories>		
+		<Repository>
+			<Url>https://raw.githubusercontent.com/abdullah-radwan/PlansConverter/master/installer/repository/win</Url>
+			<Enabled>1</Enabled>
+			<DisplayName>Main Repository</DisplayName>
+		</Repository>
 	</RemoteRepositories>
 </Installer>

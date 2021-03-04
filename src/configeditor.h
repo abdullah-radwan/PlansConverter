@@ -25,7 +25,7 @@ public:
     {
         bool typeIFR;
         int altitude;
-        bool deleteOutput;
+        bool deleteInput;
         bool checkUpdates;
 
         FormatData inputData;

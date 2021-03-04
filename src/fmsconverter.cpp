@@ -85,7 +85,6 @@ Converter::WaypointType FmsConverter::convertToType(int type)
 
 bool FmsConverter::writeFile(QString path)
 {
-    qDebug() << "Writing into" << path;
     QFile file(path);
 
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))

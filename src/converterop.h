@@ -27,7 +27,7 @@ public:
         ConvertFormat outputFormat;
         QString outputPath;
 
-        bool deleteOutput;
+        bool deleteInput;
     } data;
 
     Converter::FlightPlan flightPlan;

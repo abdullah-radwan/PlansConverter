@@ -502,7 +502,7 @@
     <item>
      <widget class="QCheckBox" name="deleteCheck">
       <property name="text">
-       <string>Delete the output file after conversion</string>
+       <string>Delete the input file after conversion</string>
       </property>
       <property name="checked">
        <bool>true</bool>
